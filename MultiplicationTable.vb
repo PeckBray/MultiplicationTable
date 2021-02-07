@@ -1,4 +1,11 @@
-﻿Module MultiplicationTable
+﻿'Brayden Peck
+'RCET0265
+'Spring 2021
+'Multiplication Table
+'https://github.com/PeckBray/MultiplicationTable
+Option Strict On
+Option Explicit On
+Module MultiplicationTable
 
     Sub Main()
         Dim userInput As String
@@ -9,7 +16,7 @@
 
         While problem = True And userInput <> "Q" And userInput <> "q"
             Try
-                Console.WriteLine("please enter the first dimension of the table")
+                Console.WriteLine("Please Enter the First Dimension of the Table")
                 userInput = Console.ReadLine()
                 firstDimension = CInt(userInput)
                 problem = False
@@ -19,7 +26,7 @@
                 ElseIf userInput <> "q" Then
 
                 Else
-                    Console.WriteLine("please enter a whole number")
+                    Console.WriteLine("Please Enter a Whole Number")
                     problem = True
                 End If
 
@@ -30,7 +37,7 @@
 
         While problem = True And userInput <> "Q" And userInput <> "q"
             Try
-                Console.WriteLine("please enter the second dimension of the table")
+                Console.WriteLine("Please Enter the Second Dimension of the Table")
                 userInput = Console.ReadLine()
                 secondDimension = CInt(userInput)
                 problem = False
@@ -40,7 +47,7 @@
                 ElseIf userInput <> "q" Then
 
                 Else
-                    Console.WriteLine("please enter a whole number")
+                    Console.WriteLine("Please Enter a Whole Number")
                     problem = True
                 End If
 
@@ -49,11 +56,14 @@
 
         Dim table(firstDimension, secondDimension) As Integer
 
+        Console.Clear()
+        Console.WriteLine($"Enjoy your {firstDimension} x {secondDimension} Multiplication Table")
+
         For i = 1 To firstDimension
             For j = 1 To secondDimension
 
                 table(i, j) = i * j
-                Console.Write($"{table(i, j)}")
+                Console.Write($"{table(i, j)}".PadLeft(6))
             Next
             Console.WriteLine()
         Next
